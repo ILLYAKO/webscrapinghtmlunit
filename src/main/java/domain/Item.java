@@ -3,7 +3,6 @@ import java.math.BigDecimal;
 
 public class Item {
     private String title;
-    private BigDecimal price;
     private String url;
 
     public String getTitle() {
@@ -14,19 +13,11 @@ public class Item {
         this.title = title;
     }
 
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
     public String getUrl() {
         return url;
     }
 
     public void setUrl(String url) {
-        this.url = url;
+        this.url ="https://www.indeed.ca"+ url;
     }
 }
