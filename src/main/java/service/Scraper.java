@@ -3,10 +3,7 @@ package service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gargoylesoftware.htmlunit.WebClient;
-import com.gargoylesoftware.htmlunit.html.HtmlAnchor;
-import com.gargoylesoftware.htmlunit.html.HtmlDivision;
-import com.gargoylesoftware.htmlunit.html.HtmlElement;
-import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.gargoylesoftware.htmlunit.html.*;
 import domain.Item;
 
 import java.io.IOException;
@@ -14,10 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Scraper {
-    // private static final String baseUrl = "https://www.indeed.ca/jobs?q=developer&l=Winnipeg";
     private static String baseUrl = "https://www.indeed.ca/jobs?q=developer&l=Winnipeg&sort=date";
     private static String rootUrl = baseUrl;
-    //private static final String baseUrl = "https://www.indeed.ca/jobs?q=developer&l=Winnipeg&sort=date&start=20";
 
     public static void main(String[] args) {
         WebClient client = new WebClient();
@@ -34,7 +29,7 @@ public class Scraper {
                 } else { baseUrl = rootUrl + "&start=" + (2 * i) + "0";}
 
                 HtmlPage page = client.getPage(baseUrl);
-                items.addAll((List<HtmlElement>) page.getByXPath("//div[ starts-with(@class, 'jobsearch-SerpJobCard')]/h2[@id]"));
+                items.addAll((List<HtmlElement>) page.getByXPath("//div[ starts-with(@class, 'jobsearch-SerpJobCard')]"));
                 //System.out.println(page.asXml());
             } catch (IOException e) { e.printStackTrace(); }
         }
@@ -44,12 +39,29 @@ public class Scraper {
             System.out.println( (items.size()+1) + " items found.");
             try {
                 for (HtmlElement htmlItem : items) {
-                    HtmlAnchor itemAnchor = (HtmlAnchor) htmlItem.getFirstChild();
-                    String urlItemAnchor = itemAnchor.getHrefAttribute();
+                    HtmlElement xElement = (HtmlElement) htmlItem.getFirstChild();
+                    HtmlAnchor itemAnchor ;
+                    if(xElement.getNodeName().equalsIgnoreCase("a")){
+                        itemAnchor = htmlItem.getFirstByXPath("*");
+                    }else{
+                        itemAnchor = htmlItem.getFirstByXPath(".//h2/a");
+                    }
+
                     String titleItemAnchor = itemAnchor.asText();
+
+                    HtmlSpan spanCompanyName = itemAnchor.getFirstByXPath("//div[@class='companyInfoWrapper']/div/span[@class='company']");
+                    String companyName =spanCompanyName.asText();
+
+                    HtmlSpan spanCity = itemAnchor.getFirstByXPath("//div[@class='companyInfoWrapper']/span[@class='location']");
+                    String city = spanCity.asText();
+
+                    String urlItemAnchor = itemAnchor.getHrefAttribute();
+
 
                     Item item = new Item();
                     item.setTitle(titleItemAnchor);
+                    item.setCompany(companyName);
+                    item.setCity(city);
                     item.setUrl(urlItemAnchor);
 
                     ObjectMapper mapper = new ObjectMapper();

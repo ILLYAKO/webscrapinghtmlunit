@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="bd9464a7-bdd6-4d88-8d31-3ee3a6f30b51" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/Scraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/Scraper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/Scraper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/Scraper.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -52,11 +53,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/service/Scraper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="58" column="49" lean-forward="true" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="75">
+              <caret line="3" column="51" lean-forward="true" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -166,7 +164,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550720512227" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550728003350" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../test14" />
   </component>
   <component name="RunDashboard">
@@ -234,7 +232,21 @@
       <option name="project" value="LOCAL" />
       <updated>1550639016334</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="combined all lists">
+      <created>1550720545967</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1550720545967</updated>
+    </task>
+    <task id="LOCAL-00005" summary="combined all lists">
+      <created>1550720555803</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1550720555803</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -334,7 +346,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added Description" />
     <MESSAGE value="added job Page Counter" />
-    <option name="LAST_COMMIT_MESSAGE" value="added job Page Counter" />
+    <MESSAGE value="combined all lists" />
+    <option name="LAST_COMMIT_MESSAGE" value="combined all lists" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -405,11 +418,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/Scraper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="58" column="49" lean-forward="true" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="3" column="51" lean-forward="true" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
         </state>
       </provider>
     </entry>
