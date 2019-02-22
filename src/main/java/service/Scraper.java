@@ -29,7 +29,7 @@ public class Scraper {
                 } else { baseUrl = rootUrl + "&start=" + (2 * i) + "0";}
 
                 HtmlPage page = client.getPage(baseUrl);
-                items.addAll((List<HtmlElement>) page.getByXPath("//div[ starts-with(@class, 'jobsearch-SerpJobCard')]"));
+                items.addAll(page.getByXPath("//div[ starts-with(@class, 'jobsearch-SerpJobCard')]"));
                 //System.out.println(page.asXml());
             } catch (IOException e) { e.printStackTrace(); }
         }
