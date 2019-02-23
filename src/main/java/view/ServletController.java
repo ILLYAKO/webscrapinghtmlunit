@@ -2,7 +2,10 @@ package view;
 
 
 
+import service.Scraper;
+
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.UUID;
 
@@ -13,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class ServletController extends HttpServlet {
-   // private CarService carService;
+    private Scraper scraper;
 
 //    public void init() {
 //        carService = new CarService();
@@ -27,11 +30,14 @@ public class ServletController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException {
         String action = request.getServletPath();
-
+        System.out.println("action: "+action);
         try {
             switch (action) {
+                case "/find1":
+                    findjob(request, response);
+                    break;
                 case "/new":
-                    showNewForm(request, response);
+                    findjob(request, response);
                     break;
                 case "/insert":
                     insertCar(request, response);
@@ -46,7 +52,7 @@ public class ServletController extends HttpServlet {
                     updateCar(request, response);
                     break;
                 default:
-                    listCar(request, response);
+                    find(request, response);
                     break;
             }
         } catch (Exception ex) {
@@ -54,11 +60,25 @@ public class ServletController extends HttpServlet {
         }
     }
 
+    private void find(HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+        System.out.println("I am looking.");
+        PrintWriter out = response.getWriter();
+        out.println("I am looking.h");
+
+    }
+    private void findjob(HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+        System.out.println("I am looking for the job.");
+        PrintWriter out = response.getWriter();
+        out.println("I am looking for the job.h");
+    }
     private void listCar(HttpServletRequest request, HttpServletResponse response)
             throws Exception {
+        System.out.println("Hi");
        // List<Car> listCar = carService.findAll();
       // request.setAttribute("listCar", listCar);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("pages/CarList.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("pages/CarList1.jsp");
         dispatcher.forward(request, response);
     }
 
