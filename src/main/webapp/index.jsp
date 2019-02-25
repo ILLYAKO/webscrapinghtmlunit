@@ -8,7 +8,8 @@
 <body>
 <h2>Find Jobs!</h2>
 
- <form action="find/new" method="post">
+ <%--<form action="${pageContext.request.contextPath}/find/new" method="post">--%>
+ <form action="./find/new" method="post">
   Job Title:<br>
   <input type="text" name="jobTitle" value="<c:out value='${job.title}' />" />
   <br>

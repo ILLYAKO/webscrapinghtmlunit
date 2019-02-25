@@ -29,7 +29,12 @@ public class ServletController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException {
-        String action = request.getServletPath();
+        System.out.println("request: "+request);
+        System.out.println("response: "+ response);
+
+        //String action = request.getServletPath();
+        String action = request.getPathInfo();
+
         System.out.println("action: "+action);
         try {
             switch (action) {
