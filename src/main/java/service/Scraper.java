@@ -23,6 +23,7 @@ public class Scraper {
 //    public static void main(String[] args) {
 
         baseUrl = "https://www.indeed.ca/jobs?q=" + item.getTitle() + "&l=" + item.getCity() + "&sort=date";
+        System.out.println();
         WebClient client = new WebClient();
         boolean baseUrlIsFirst = true;
         client.getOptions().setJavaScriptEnabled(false);
