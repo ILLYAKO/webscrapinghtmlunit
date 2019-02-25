@@ -2,6 +2,7 @@ package view;
 
 
 
+import domain.Item;
 import service.Scraper;
 
 import java.io.IOException;
@@ -16,7 +17,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class ServletController extends HttpServlet {
-    private Scraper scraper;
+    private Scraper scraper =new Scraper();
+    private Item item = new Item();
+
 
 //    public void init() {
 //        carService = new CarService();
@@ -29,20 +32,20 @@ public class ServletController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException {
-        System.out.println("request: "+request);
-        System.out.println("response: "+ response);
+       System.out.println("request: "+request);
+       System.out.println("response: "+ response);
 
-        //String action = request.getServletPath();
+       //String action = request.getServletPath();
         String action = request.getPathInfo();
 
         System.out.println("action: "+action);
         try {
             switch (action) {
-                case "/find1":
-                    findjob(request, response);
+                case "/find":
+                    find(request, response);
                     break;
                 case "/new":
-                    findjob(request, response);
+                    find(request, response);
                     break;
                 case "/insert":
                     insertCar(request, response);
@@ -57,7 +60,7 @@ public class ServletController extends HttpServlet {
                     updateCar(request, response);
                     break;
                 default:
-                    find(request, response);
+                    last(request, response);
                     break;
             }
         } catch (Exception ex) {
@@ -65,18 +68,32 @@ public class ServletController extends HttpServlet {
         }
     }
 
-    private void find(HttpServletRequest request, HttpServletResponse response)
+    private void last(HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        System.out.println("I am looking.");
+        System.out.println("I am last.");
         PrintWriter out = response.getWriter();
-        out.println("I am looking.h");
+        out.println("I am last.h");
 
     }
-    private void findjob(HttpServletRequest request, HttpServletResponse response)
+    private void find(HttpServletRequest request, HttpServletResponse response)
             throws Exception {
+
         System.out.println("I am looking for the job.");
-        PrintWriter out = response.getWriter();
-        out.println("I am looking for the job.h");
+        item.setTitle(request.getParameter("jobTitle"));
+        item.setCity(request.getParameter("city"));
+        System.out.println(item.getTitle());
+        System.out.println(item.getCity());
+
+        scraper.setItem(item);
+        System.out.println(scraper);
+
+        request.setAttribute("item", item);
+//        PrintWriter out = response.getWriter();
+//        out.println("I am looking for the job.h");
+        //RequestDispatcher dispatcher = request.getRequestDispatcher("pages/CarList1.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/joblist.jsp");
+        dispatcher.forward(request, response);
+
     }
     private void listCar(HttpServletRequest request, HttpServletResponse response)
             throws Exception {

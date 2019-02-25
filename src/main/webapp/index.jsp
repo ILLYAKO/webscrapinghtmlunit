@@ -9,12 +9,12 @@
 <h2>Find Jobs!</h2>
 
  <%--<form action="${pageContext.request.contextPath}/find/new" method="post">--%>
- <form action="./find/new" method="post">
+ <form action="./jobsearch/find" method="post">
   Job Title:<br>
-  <input type="text" name="jobTitle" value="<c:out value='${job.title}' />" />
+  <input type="text" name="jobTitle" placeholder="Enter your job title" />
   <br>
   City:<br>
-  <input type="text" name="cityName" value="<c:out value='${job.city}' />" />
+  <input type="text" name="city" placeholder="Enter the city" />
   <br><br>
   <input type="submit" value="Submit">
 </form>

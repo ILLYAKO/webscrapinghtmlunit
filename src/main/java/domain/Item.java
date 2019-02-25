@@ -8,6 +8,10 @@ public class Item {
     private String city;
     private String url;
 
+    public Item() {
+        System.out.println("Item-01");
+    }
+
     public String getTitle() {
         return title;
     }
