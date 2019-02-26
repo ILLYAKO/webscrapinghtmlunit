@@ -8,28 +8,36 @@ import domain.Item;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Scraper {
     //private static String baseUrl = "https://www.indeed.ca/jobs?q=developer&l=Winnipeg&sort=date";
     private static String baseUrl = "";
-    private static String rootUrl = baseUrl;
-    Item item = new Item();
+    private static String rootUrl = "";
+    List<HtmlElement> itemsTotal = new ArrayList<>();
+    //Item item;
 
-    public Scraper() {
+    public Scraper(Item item) {
+        //this.item = item;
         System.out.println("Scraper-01");
+        System.out.println("item.getTitle():" + item.getTitle());
+        System.out.println("item.getCity(): " + item.getCity());
 //    }
 //
 //    public static void main(String[] args) {
 
         baseUrl = "https://www.indeed.ca/jobs?q=" + item.getTitle() + "&l=" + item.getCity() + "&sort=date";
-        System.out.println();
+        rootUrl=baseUrl;
+        System.out.println("baseUrl: "+baseUrl);
         WebClient client = new WebClient();
         boolean baseUrlIsFirst = true;
         client.getOptions().setJavaScriptEnabled(false);
         client.getOptions().setCssEnabled(false);
         client.getOptions().setUseInsecureSSL(true);
         int jobPages = jobPageCounter(client, baseUrl);
+        System.out.println("Scraper-02 jobPages: " +jobPages);
+
         List<HtmlElement> items = new ArrayList<>();
 
         for (int i = 0; i <= jobPages; i++) {
@@ -38,10 +46,12 @@ public class Scraper {
                     baseUrlIsFirst = false;
                 } else {
                     baseUrl = rootUrl + "&start=" + (2 * i) + "0";
+                    System.out.println(baseUrl);
                 }
 
                 HtmlPage page = client.getPage(baseUrl);
                 items.addAll(page.getByXPath("//div[ starts-with(@class, 'jobsearch-SerpJobCard')]"));
+                System.out.println("items.size:"+items.size());
                 //System.out.println(page.asXml());
             } catch (IOException e) {
                 e.printStackTrace();
@@ -50,15 +60,25 @@ public class Scraper {
         if (items.isEmpty()) {
             System.out.println("No items found.");
         } else {
+            this.itemsTotal=items;
             System.out.println((items.size() + 1) + " items found.");
+            //int i=0;
             try {
                 for (HtmlElement htmlItem : items) {
-                    HtmlElement xElement = (HtmlElement) htmlItem.getFirstChild();
+
+                    //System.out.println("htmlItem("+(i)+"): "+htmlItem);
+                    //System.out.println("htmlItem.getChildElementCount()" + htmlItem.getChildElementCount());
+                    HtmlElement xElement = (HtmlElement) htmlItem.getFirstByXPath("*");
+                   //System.out.println("xElement: "+xElement);
+
                     HtmlAnchor itemAnchor;
                     if (xElement.getNodeName().equalsIgnoreCase("a")) {
                         itemAnchor = htmlItem.getFirstByXPath("*");
+                        //System.out.println("--a:"+itemAnchor);
+
                     } else {
                         itemAnchor = htmlItem.getFirstByXPath(".//h2/a");
+                        //System.out.println("--h:"+itemAnchor);
                     }
 
                     String titleItemAnchor = itemAnchor.asText();
@@ -72,15 +92,16 @@ public class Scraper {
                     String urlItemAnchor = itemAnchor.getHrefAttribute();
 
 
-                    Item item = new Item();
-                    item.setTitle(titleItemAnchor);
-                    item.setCompany(companyName);
-                    item.setCity(city);
-                    item.setUrl(urlItemAnchor);
+                    Item itemResult = new Item();
+                    itemResult.setTitle(titleItemAnchor);
+                    itemResult.setCompany(companyName);
+                    itemResult.setCity(city);
+                    itemResult.setUrl(urlItemAnchor);
 
-                    ObjectMapper mapper = new ObjectMapper();
-                    String jsonString = mapper.writeValueAsString(item);
-                    System.out.println(jsonString);
+                   ObjectMapper mapper = new ObjectMapper();
+                    String jsonString = mapper.writeValueAsString(itemResult);
+                   System.out.println(jsonString);
+                    //i++;
                 }
             } catch (JsonProcessingException e) {
                 e.printStackTrace();
@@ -103,11 +124,7 @@ public class Scraper {
         }
     }
 
-    public Item getItem() {
-        return item;
-    }
-
-    public void setItem(Item item) {
-        this.item = item;
+    public List<HtmlElement> getItemsTotal() {
+        return itemsTotal;
     }
 }

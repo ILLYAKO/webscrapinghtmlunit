@@ -12,16 +12,14 @@
 ${item.city}
 
 <p>If you click the "Submit" button, the data will be processed.</p>
-<c:forEach var="car" items="${listCar}">
+<c:forEach var="jobitem" items="${items}">
     <tr>
-        <td><c:out value="${car.plate}" /></td>
-        <td><c:out value="${car.brand}" /></td>
-        <td><c:out value="${car.year}" /></td>
-        <td><c:out value="${car.color}" /></td>
+        <td><c:out value="${jobitem.title}" /></td>
+        <td><c:out value="${jobitem.company}" /></td>
+        <td><c:out value="${jobitem.city}" /></td>
+        <td><c:out value="${jobitem.url}" /></td>
         <td>
-        <a href="${pageContext.request.contextPath}/car/edit?id=<c:out value='${car.id}' />">Edit</a>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="${pageContext.request.contextPath}/car/delete?id=<c:out value='${car.id}' />">Delete</a>
+
         </td>
     </tr>
 </c:forEach>

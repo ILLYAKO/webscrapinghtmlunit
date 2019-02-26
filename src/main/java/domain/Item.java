@@ -9,7 +9,7 @@ public class Item {
     private String url;
 
     public Item() {
-        System.out.println("Item-01");
+        //System.out.println("Item-01");
     }
 
     public String getTitle() {

@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class ServletController extends HttpServlet {
-    private Scraper scraper =new Scraper();
+
     private Item item = new Item();
 
 
@@ -83,11 +83,12 @@ public class ServletController extends HttpServlet {
         item.setCity(request.getParameter("city"));
         System.out.println(item.getTitle());
         System.out.println(item.getCity());
-
-        scraper.setItem(item);
-        System.out.println(scraper);
+        Scraper scraper = new Scraper(item);
+                System.out.println(scraper);
 
         request.setAttribute("item", item);
+        request.setAttribute("items", scraper.getItemsTotal());
+
 //        PrintWriter out = response.getWriter();
 //        out.println("I am looking for the job.h");
         //RequestDispatcher dispatcher = request.getRequestDispatcher("pages/CarList1.jsp");
