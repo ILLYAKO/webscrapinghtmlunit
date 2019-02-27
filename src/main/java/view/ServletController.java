@@ -32,13 +32,7 @@ public class ServletController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException {
-       System.out.println("request: "+request);
-       System.out.println("response: "+ response);
-
-       //String action = request.getServletPath();
         String action = request.getPathInfo();
-
-        System.out.println("action: "+action);
         try {
             switch (action) {
                 case "/find":
@@ -71,34 +65,23 @@ public class ServletController extends HttpServlet {
     private void last(HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         System.out.println("I am last.");
-        PrintWriter out = response.getWriter();
-        out.println("I am last.h");
-
     }
     private void find(HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-
-        System.out.println("I am looking for the job.");
         item.setTitle(request.getParameter("jobTitle"));
         item.setCity(request.getParameter("city"));
-        System.out.println(item.getTitle());
-        System.out.println(item.getCity());
         Scraper scraper = new Scraper(item);
-                System.out.println(scraper);
 
         request.setAttribute("item", item);
-        request.setAttribute("items", scraper.getItemsTotal());
+        request.setAttribute("jobItems", scraper.getJobItems());
 
-//        PrintWriter out = response.getWriter();
-//        out.println("I am looking for the job.h");
-        //RequestDispatcher dispatcher = request.getRequestDispatcher("pages/CarList1.jsp");
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("/joblist.jsp");
         dispatcher.forward(request, response);
 
     }
     private void listCar(HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        System.out.println("Hi");
        // List<Car> listCar = carService.findAll();
       // request.setAttribute("listCar", listCar);
         RequestDispatcher dispatcher = request.getRequestDispatcher("pages/CarList1.jsp");

@@ -1,16 +1,12 @@
 package domain;
 
-import java.math.BigDecimal;
-
 public class Item {
     private String title;
     private String company;
     private String city;
     private String url;
 
-    public Item() {
-        //System.out.println("Item-01");
-    }
+    public Item() {    }
 
     public String getTitle() {
         return title;
