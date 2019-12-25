@@ -9,8 +9,10 @@
     <body>
         <h2>Job List:</h2>
         <p>${jobItems.size()} results for "${item.title}" in the city of ${item.city}.</p>
+
         <c:forEach var="jobItem" items="${jobItems}">
-            <a href="${jobItem.url}">${jobItem.title}</a><br>
+            <c:set var="count" value="${count + 1}" scope="page"/>
+            <a href="${jobItem.url}">  ${count } - ${jobItem.title}</a><br>
         </c:forEach>
     </body>
 </html>

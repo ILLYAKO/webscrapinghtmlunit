@@ -28,7 +28,7 @@ public class Scraper {
 
         List<HtmlElement> items = new ArrayList<>();
 
-        for (int i = 0; i <= jobPages+1; i++) {
+        for (int i = 0; i <= jobPages; i++) {
             try {
                 if (baseUrlIsFirst) {
                     baseUrlIsFirst = false;
@@ -107,6 +107,8 @@ public class Scraper {
                     itemResult.setCity(city);
                     itemResult.setUrl(urlItemAnchor);
 
+                    placeOnMap(client, itemResult);
+
                     jobItems.add(itemResult);
 
                    ObjectMapper mapper = new ObjectMapper();
@@ -139,5 +141,26 @@ public class Scraper {
 
     public List<Item> getJobItems() {
         return jobItems;
+    }
+
+    void placeOnMap(WebClient client, Item item){
+        System.out.println("Title: " + item.getTitle()+" for: "+item.getCompany()+ " in "+item.getCity().replace(",",""));
+        String urlGoogle="https://www.google.com/search?q="+item.getCompany()+"+"+item.getCity().replace(",","");
+
+//        try {
+//            HtmlPage page = client.getPage(urlGoogle);
+//            HtmlDivision divMapOf = page.getFirstByXPath(".//div[@class='rhsg4 rhsmap5col']");
+////            "rhsg4 rhsmap5col"
+//
+////            ("//div[ starts-with(@class, 'jobsearch-SerpJobCard')]")
+//            System.out.println("divMapOf:"+ divMapOf);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            System.out.println("It is not in the Map");
+//        }
+
+
+//        int jobPages = jobPageCounter(clientGoogle, urlGoogle);
+
     }
 }
