@@ -12,7 +12,7 @@
 
         <c:forEach var="jobItem" items="${jobItems}">
             <c:set var="count" value="${count + 1}" scope="page"/>
-            <a href="${jobItem.url}">  ${count } - ${jobItem.title}</a><br>
+            <a href="${jobItem.url}" target="_blank">  ${count } - ${jobItem.title}</a><br>
         </c:forEach>
     </body>
 </html>

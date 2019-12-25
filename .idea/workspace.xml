@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd9464a7-bdd6-4d88-8d31-3ee3a6f30b51" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/WriteFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/Scraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/Scraper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ServletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ServletController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/joblist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/joblist.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -46,15 +49,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/service/Scraper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="149" selection-start-line="149" selection-start-column="2" selection-end-line="159" selection-end-column="11" />
+            <state relative-caret-position="400">
+              <caret line="109" column="53" lean-forward="true" selection-start-line="109" selection-start-column="53" selection-end-line="109" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5217#5269#0" />
-                <element signature="e#6024#6151#0" />
+                <element signature="method#jobPageCounter#0;class#Scraper#0" />
+                <element signature="e#6246#6247#0" expanded="true" />
+                <element signature="e#6277#6278#0" expanded="true" />
+                <element signature="method#placeOnMap#0;class#Scraper#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/WriteFile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -63,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/domain/Item.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="325">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -72,8 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/view/ServletController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="72" selection-start-line="72" selection-end-line="72" />
+            <state relative-caret-position="301">
+              <caret line="80" column="38" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/joblist.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="16" column="11" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+            <state relative-caret-position="350">
+              <caret line="14" column="91" lean-forward="true" selection-start-line="14" selection-start-column="91" selection-end-line="14" selection-end-column="91" />
             </state>
           </provider>
         </entry>
@@ -131,13 +148,13 @@
       <find>car</find>
       <find>CarList</find>
       <find>1</find>
-      <find>System.out.println</find>
       <find>System.out.println(</find>
       <find>titleItemAnchor</find>
       <find>itemTitle.toString()</find>
       <find>Senio</find>
       <find>NullPointerException</find>
       <find>Exception Caught</find>
+      <find>System.out.println</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -157,11 +174,12 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/view/ServletController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/domain/Item.java" />
         <option value="$PROJECT_DIR$/src/main/java/desktopapp/DesktopController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/joblist.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/view/ServletController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/domain/Item.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/Scraper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/WriteFile.java" />
       </list>
     </option>
   </component>
@@ -182,16 +200,18 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="81" />
-    <option name="y" value="-15" />
-    <option name="width" value="1694" />
-    <option name="height" value="1026" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -268,8 +288,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -278,7 +296,7 @@
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.generateSingleFile" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="webscrapinghtmlunit" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1577163628378" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1577297851714" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
@@ -469,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577078614107</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="DESCTOPCONTROLLER">
+      <created>1577283061113</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1577283061113</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -483,6 +508,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.5005417" side_tool="true" weight="0.1337953" />
       <window_info id="Designer" order="1" />
@@ -493,11 +519,11 @@
       <window_info id="Favorites" order="6" sideWeight="0.35969663" side_tool="true" weight="0.1337953" />
       <window_info id="DB Browser" order="7" weight="0.32995737" />
       <window_info id="Project Explorer" order="8" weight="0.32995737" />
-      <window_info content_ui="combo" id="Project" order="9" sideWeight="0.6403034" visible="true" weight="0.12526652" />
+      <window_info active="true" content_ui="combo" id="Project" order="9" sideWeight="0.6403034" visible="true" weight="0.12633263" />
       <window_info id="Job Explorer" order="10" weight="0.32995737" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.29469123" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29469123" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -514,21 +540,24 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" visible="true" weight="0.123667374" />
+      <window_info anchor="right" id="Maven" order="6" weight="0.123667374" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6403034" visible="true" weight="0.12846482" />
-      <window_info id="Structure" order="1" sideWeight="0.5005417" side_tool="true" weight="0.1337953" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Learn" order="6" />
-      <window_info id="Favorites" order="7" sideWeight="0.35969663" side_tool="true" weight="0.1337953" />
+      <window_info id="Structure" order="0" sideWeight="0.5005417" side_tool="true" weight="0.1337953" />
+      <window_info id="Designer" order="1" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Learn" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.35969663" side_tool="true" weight="0.1337953" />
+      <window_info id="DB Browser" order="7" weight="0.32995737" />
+      <window_info id="Project Explorer" order="8" weight="0.32995737" />
+      <window_info content_ui="combo" id="Project" order="9" sideWeight="0.6403034" weight="0.12633263" />
+      <window_info id="Job Explorer" order="10" weight="0.32995737" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21668473" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29469123" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -537,13 +566,15 @@
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32936078" />
+      <window_info anchor="bottom" id="DB Execution Console" order="11" />
+      <window_info anchor="bottom" id="Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" weight="0.14232409" />
+      <window_info anchor="right" id="Maven" order="6" weight="0.123667374" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout-to-restore>
   </component>
@@ -733,13 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/domain/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/desktopapp/DesktopController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -750,32 +774,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/joblist.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/Item.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="11" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/view/ServletController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="325">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/Scraper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="149" selection-start-line="149" selection-start-column="2" selection-end-line="159" selection-end-column="11" />
+        <state relative-caret-position="400">
+          <caret line="109" column="53" lean-forward="true" selection-start-line="109" selection-start-column="53" selection-end-line="109" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5217#5269#0" />
-            <element signature="e#6024#6151#0" />
+            <element signature="method#jobPageCounter#0;class#Scraper#0" />
+            <element signature="e#6246#6247#0" expanded="true" />
+            <element signature="e#6277#6278#0" expanded="true" />
+            <element signature="method#placeOnMap#0;class#Scraper#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/WriteFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/view/ServletController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="80" column="38" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/joblist.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="91" lean-forward="true" selection-start-line="14" selection-start-column="91" selection-end-line="14" selection-end-column="91" />
         </state>
       </provider>
     </entry>

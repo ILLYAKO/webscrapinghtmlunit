@@ -39,4 +39,14 @@ public class Item {
     public void setUrl(String url) {
         this.url = "https://www.indeed.ca" + url;
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "title='" + title + '\'' +
+                ", company='" + company + '\'' +
+                ", city='" + city + '\'' +
+                ", url='" + url + '\'' +
+                '}';
+    }
 }

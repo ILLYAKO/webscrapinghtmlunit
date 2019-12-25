@@ -4,6 +4,7 @@ package view;
 
 import domain.Item;
 import service.Scraper;
+import service.WriteFile;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -70,7 +71,11 @@ public class ServletController extends HttpServlet {
             throws Exception {
         item.setTitle(request.getParameter("jobTitle"));
         item.setCity(request.getParameter("city"));
+
         Scraper scraper = new Scraper(item);
+
+        try {WriteFile wf = new WriteFile(item,scraper.getJobItems());}
+        catch (IOException ioe){System.out.println("Exception Message: " + ioe.getMessage());}
 
         request.setAttribute("item", item);
         request.setAttribute("jobItems", scraper.getJobItems());

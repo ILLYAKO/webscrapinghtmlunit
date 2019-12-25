@@ -35,19 +35,19 @@ public class Scraper {
                 } else {
                     baseUrl = rootUrl + "&start=" + (2 * i) + "0";
                 }
-                System.out.println("baseUrl:"+ baseUrl);
+//                System.out.println("baseUrl:"+ baseUrl);
                 HtmlPage page = client.getPage(baseUrl);
 
 //                items.addAll(page.getByXPath("//div[ starts-with(@class, 'jobsearch-SerpJobCard')]"));
                 items.addAll(page.getByXPath("//div[ starts-with(@class, 'jobsearch-SerpJobCard unifiedRow row result')]"));
 
-                System.out.println("items.size()-"+items.size());
+//                System.out.println("items.size()-"+items.size());
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
         if (items.isEmpty()) {
-            System.out.println("No items found.");
+//            System.out.println("No items found.");
         } else {
             this.itemsTotal=items;
            // System.out.println((items.size() + 1) + " items found.");
@@ -76,7 +76,7 @@ public class Scraper {
 
 //                    String titleItemAnchor = itemAnchor.asText();
                     String titleItem = itemDivTitle.asText();
-                    System.out.println("titleItem-"+titleItem);
+//                    System.out.println("titleItem-"+titleItem);
 
 //                    HtmlSpan spanCompanyName = itemAnchor.getFirstByXPath("//div[@class='companyInfoWrapper']/div/span[@class='company']");
 //                    String companyName = spanCompanyName.asText();
@@ -104,10 +104,10 @@ public class Scraper {
 //                    itemResult.setTitle(titleItemAnchor);
                     itemResult.setTitle(titleItem);
                     itemResult.setCompany(companyName);
-                    itemResult.setCity(city);
+                    itemResult.setCity(city.replace(",",""));
                     itemResult.setUrl(urlItemAnchor);
 
-                    placeOnMap(client, itemResult);
+                    //placeOnMap(client, itemResult);
 
                     jobItems.add(itemResult);
 
@@ -126,14 +126,14 @@ public class Scraper {
             HtmlPage page = client.getPage(baseUrl);
 //            HtmlDivision divSearchCount = page.getFirstByXPath("//div[@id='searchCount']");
             HtmlDivision divSearchCountPages = page.getFirstByXPath("//div[@id='searchCountPages']");
-            System.out.println("divSearchCountPages:"+ divSearchCountPages.asText());
+//            System.out.println("divSearchCountPages:"+ divSearchCountPages.asText());
 
             String[] stringNumberJobs = divSearchCountPages.getFirstChild().asText().split(" ");
             int numberJobs = Integer.parseInt(stringNumberJobs[3].replaceAll(",", ""));
-            System.out.println("numberJobs:"+numberJobs);
+//            System.out.println("numberJobs:"+numberJobs);
             return (numberJobs / 20);
         } catch (IOException e) {
-            System.out.println("jobPageCounter Exception!");
+//            System.out.println("jobPageCounter Exception!");
             e.printStackTrace();
             return 0;
         }
