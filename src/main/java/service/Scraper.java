@@ -8,7 +8,9 @@ import domain.Item;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Scraper {
     private static String baseUrl = "";
@@ -109,7 +111,9 @@ public class Scraper {
 
                     //placeOnMap(client, itemResult);
 
-                    jobItems.add(itemResult);
+//                    if(jobItemsHas(itemResult))
+                        jobItems.add(itemResult);
+//                    else continue;
 
                    ObjectMapper mapper = new ObjectMapper();
                     String jsonString = mapper.writeValueAsString(itemResult);
@@ -118,7 +122,25 @@ public class Scraper {
             } catch (JsonProcessingException e) {
                 e.printStackTrace();
             }
+
+
         }
+//        // Removing Duplicates
+//        Set<Item> setItems = new HashSet<Item>(jobItems);
+////        setItems.addAll(jobItems);
+//        jobItems = new ArrayList<Item>(setItems);
+////        jobItems.addAll(setItems);
+//        //Now the List has only the identical Elements
+
+    }
+
+    private boolean jobItemsHas(Item itemResult) {
+        for (Item tempItem:jobItems)
+        {
+            if(itemResult.equals(tempItem))
+                return false;
+        }
+        return true;
     }
 
     private static int jobPageCounter(WebClient client, String baseUrl) {

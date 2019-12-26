@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.Objects;
+
 public class Item {
     private String title;
     private String company;
@@ -48,5 +50,21 @@ public class Item {
                 ", city='" + city + '\'' +
                 ", url='" + url + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Item item = (Item) o;
+        return Objects.equals(title, item.title) &&
+                Objects.equals(company, item.company) &&
+                Objects.equals(city, item.city) &&
+                Objects.equals(url, item.url);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, company, city, url);
     }
 }
